@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .name {
+            text-align: center;
+            animation: rotate 5s infinite, background 1.5s infinite alternate;
+            width: 300px;
+            margin: 100px auto;
+            font-size: 50px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+
+            50% {
+                /* transform: perspective(120px) rotateX(-180deg) rotateY(0deg); */
+            }
+
+            to {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+                /* transform: perspective(120px) rotateX(-360deg) rotateY(0deg); */
+            }
+        }
+
+        @keyframes background {
+            from{background-color: greenyellow;}
+            50%{background-color: blueviolet;}
+            to{background-color: red;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="name">
+        <h1>윤지 사랑해♥</h1>
+        <p>경 축 840일!!</p>
+    </div>
+</body>
+
+</html>

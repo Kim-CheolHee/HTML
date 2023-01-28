@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+			background-color: antiquewhite;
+			width: 800px;
+			height: 600px;
+			margin: 0 auto;
+			padding: 20px
+		}
+
+		#makeRowNum,
+		#makeColumnNum {
+			width: 50px;
+			height: 20px;
+		}
+
+		#decoButton {
+			background-color: black;
+			color: white;
+			width: 40px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		input[type="text"] {
+			width: 30px;
+			height: 20px;
+			text-align: center;
+		}
+
+		table {
+			width: 300px;
+		}
+
+		table,
+		tr {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<input type="text" name="" id="makeRowNum"> 행
+		<input type="text" name="" id="makeColumnNum"> 열
+		<button id="decoButton" onclick="newTable()">작성</button>
+		<div id="contents"></div>
+	</div>
+
+	<script>
+		function newTable() {
+			var makeRowNum = document.querySelector("#makeRowNum").value;
+			var makeColumnNum = document.querySelector("#makeColumnNum").value;
+			var newTable = document.createElement("table");
+			for (let i = 0; i < makeRowNum; i++) {
+				var newRow = document.createElement("tr");
+				for (let j = 0; j < makeColumnNum; j++) {
+					var newColumn = document.createElement("td");
+					var cellText = document.createTextNode(i + ", " + j);
+					newColumn.appendChild(cellText);
+					newRow.appendChild(newColumn);
+				}
+				newTable.appendChild(newRow);
+			}
+			var contents = document.querySelector("#contents");
+			contents.appendChild(newTable);
+		}
+	</script>
+</body>
+
+</html>
